@@ -1,7 +1,7 @@
 const p = document.querySelector('.po');
 const input = document.querySelector('#input')
 const btn = document.querySelector('#btn');
-
+const degree = document.querySelector('#degrees')
 
 const cityList = [
   { name: "Berlin", lat: 52.52, lon: 13.4050 },
