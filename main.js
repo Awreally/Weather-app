@@ -52,7 +52,6 @@ async function getData() {
     const time = data.current.time.split('T');
     cityTime.textContent = time[1];
     cityDate.textContent = time[0];
-
     }
 
     
