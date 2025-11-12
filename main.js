@@ -1,7 +1,11 @@
 const p = document.querySelector('.po');
-const input = document.querySelector('#input')
+const input = document.querySelector('#input');
 const btn = document.querySelector('#btn');
-const degree = document.querySelector('#degrees')
+const degree = document.querySelector('#degrees');
+const nameCity = document.querySelector('#h1');
+const wind = document.querySelector('#wind');
+const cityTime = document.querySelector('#time');
+const cityDate = document.querySelector('#date');
 
 const cityList = [
   { name: "Berlin", lat: 52.52, lon: 13.4050 },
@@ -34,15 +38,22 @@ async function getData() {
     const res = await fetch(url);
     const data = await res.json();
     console.log(data);
+    console.log(cityName);
     
+    // Display data from API
+    nameCity.textContent = `${cityName[0].toUpperCase()}${cityName.substring(1).toLocaleLowerCase()}`;
+    // Temp
     const temp = data.current.temperature_2m;
-    const windSpeed = data.current.wind_speed_10m / 3.6;
-    console.log(Math.round(windSpeed));
-    p.textContent = temp;
+    degree.textContent = `${temp} °C `;
+    //Wind, 
+    const windSpeed = Math.round(data.current.wind_speed_10m / 3.6);
+    wind.textContent = `Wind: ${windSpeed} m/s`;
+    // Time && date
+    const time = data.current.time.split('T');
+    cityTime.textContent = time[1];
+    cityDate.textContent = time[0];
 
-    console.log(temp);
-    
     }
 
-
+    
     btn.addEventListener('click', getData);

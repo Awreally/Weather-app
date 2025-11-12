@@ -7,16 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <input id="input" type="text">
+    <div class="border">
+        <input id="input" type="text" placeholder="🔍 Search city..."/>
         <button id="btn">Tryck här</button>
-        <h1 class="city">Stockholm</h1>
-        <p>Datum</p>
-        <img class="weather-icon" src="assets/clear_day_60dp_FFFF55_FILL0_wght400_GRAD0_opsz48.svg" alt="Sun">
-        <h2 id="degrees">Grader</h2>
-        <p>sol</p>
-        <p class="po"></p>
-        <div class="info">
+        <div class="container">
+            <div class="icon">
+                <img class="weather-icon" src="assets/wi--day-sunny.svg" alt="Sun">
+                <p id="cloud">Sunny</p>
+            </div>
+            <div class="wheater-info">
+                <h1 id="h1">City</h1>
+                <h2 id="degrees">Grader</h2>
+                <p id="wind">Wind</p>
+                <p id="time">Time</p>
+                <p id="date">Date</p>
+            </div>
         </div>
     </div>
 <script src="main.js"></script>   
